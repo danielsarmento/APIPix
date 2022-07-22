@@ -62,9 +62,9 @@ exports.createBilling = async (req, res, next) => {
                 "cpf": "09764037496",
                 "nome": "Daniel Sarmento"
             },
-            "valor": { "original": "0.01"},
+            "valor": { "original": "0.02"},
             "chave": "2b0a323e-690b-4f8b-b86d-a419a9befd40",
-            "solicitacaoPagador": "Informe o número ou identificador do pedido."
+            "solicitacaoPagador": "Teste."
         });
 
         const config = {
@@ -111,7 +111,6 @@ exports.getQrCode = async (req, res, next) => {
             .then((response) => {
                 console.log(response.data);
                 imgQrCode = decodeBase64Image(response.data.imagemQrcode);
-                console.log('image', imgQrCode)
                 fs.writeFileSync(`pix-cobranca-teste.jpg`, imgQrCode.data)
             })
             .catch (erro => {
