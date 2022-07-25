@@ -1,9 +1,8 @@
 require('dotenv').config();
 const axios = require('axios');
-const { response } = require('express');
 const fs = require('fs');
 const https = require('https');
-const randexp = require('randexp')
+
 
 exports.autenticacao = async (req, res, next) => {
 
@@ -64,7 +63,7 @@ exports.createBilling = async (req, res, next) => {
             },
             "valor": { "original": "0.02"},
             "chave": "2b0a323e-690b-4f8b-b86d-a419a9befd40",
-            "solicitacaoPagador": "Teste."
+            "solicitacaoPagador": "Testando Resposta ao WhatsApp"
         });
 
         const config = {
